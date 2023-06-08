@@ -1,6 +1,7 @@
 from dotenv import load_dotenv
 from llama_index import GPTChromaIndex, TrafilaturaWebReader
 import chromadb
+import time
 
 load_dotenv()
 
@@ -15,6 +16,7 @@ def query_pages(collection, urls, questions):
     for question in questions:
         print(f"Question: {question} \n")
         print(f"Answer: {index.query(question)}")
+        time.sleep(5)
 
 if __name__ == "__main__":
     url_list = ["https://cloudinary.com/documentation/transformation_reference",
@@ -33,10 +35,9 @@ if __name__ == "__main__":
                 ]
 
     questions = [
-        "What does the asset Delivery URL structure looks like?",
-        "Give me an example URL of how would I take a sample image and add a black and white filter to it, then crop the image to focus on faces with the transformation URL API?",
+        # "What does the asset Delivery URL structure looks like?",
         "Admin API Get request for all assets in a specific folder named 'cats_smiling'?",
-        "How do I delete a user in my cloud?"
+        "How do I delete a user in my cloud?",
     ]
 
     collection = create_embedding_store("supertype")
