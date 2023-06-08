@@ -24,3 +24,4 @@ First run may take a bit longer.
   - Within the docsLLM.py file, the questions Array contains a few example questions. This supports multiple quote encapsulated questions per run separated by commas.
   - Run with python3 docsLLM.py
   - Note: Please watch your credit consumption as you can burn through the free tier ( or paid credits ) pretty quickly running these requests. 
+  - Note: URLs.txt contains the full list of scraped URLs. Inputting these into the url_list will result it much more accurate responses, however, this will cause the application to take 15-20 minutes to run a batch of queries and possible timeouts. These can be avoided through refactoring the application in further phases
